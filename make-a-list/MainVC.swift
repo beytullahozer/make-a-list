@@ -22,8 +22,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Make A List"
-        view.backgroundColor = UIColor(red: 0.01, green: 0.28, blue: 0.36, alpha: 1.00)
+        title = "Notes"
+        view.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.00)
         getAllItems()
         setup()
     }
@@ -32,7 +32,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = UIColor(red: 0.01, green: 0.28, blue: 0.36, alpha: 1.00)
+        tableView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.00)
         tableView.frame = CGRect(x: 0.0, y: 150.0, width: 428, height: 775.0)
         
         view.addSubview(tableView)
@@ -129,8 +129,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = model[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = UIColor(red: 0.01, green: 0.28, blue: 0.36, alpha: 1.00)
+        cell.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.00)
         cell.textLabel?.text = model.name
+        cell.textLabel?.textColor = UIColor(red: 0.09, green: 0.09, blue: 0.09, alpha: 1.00)
+        cell.textLabel?.font = UIFont(name: "Graphie-SemiBold", size: 18)
 //        cell.textLabel?.text = "\(model.name) - \(model.created)"
         return cell
     }
@@ -147,7 +149,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         sheet.addAction(UIAlertAction(title: "Edit", style: .default, handler: { _ in
 
-            let alert = UIAlertController(title: "Edit Item", message: "", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Edit List", message: "", preferredStyle: .alert)
             alert.addTextField(configurationHandler: nil)
             alert.textFields?.first?.text = item.name
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
