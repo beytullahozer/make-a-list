@@ -1,4 +1,7 @@
-## Define
+## Make a Market List App 
+
+
+### Basit bir market listesi oluşturma uygulamasıdır. Core Data kullanılarak text içerisine girilen veriyi kaydeder ve ekrana yazdırır. Yazılan veri düzeltilir ve silinir.
 
 <br>
 <p align="center">
